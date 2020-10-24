@@ -4,37 +4,12 @@ var letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var number = "1234567890";
 var characters = "!#$%&'()*+,-./:;<=>?@\[^_`{|}~";
 
-// function generatePassword() {
-//   var typeChoice = "";
-
-//   if (lowerCase === true) {
-//     typeChoice = typeChoice + letter.toLowerCase();
-//   }
-
-//   if (upperCase === true) {
-//     typeChoice = typeChoice + letter;
-//   }
-
-//   if (numeric === true) {
-//     typeChoice = typeChoice + number;
-//   }
-
-//   if (specialChar === true) {
-//     typeChoice = typeChoice + characters;
-//   }
-// }
-
-
-// Write password to the #password input
-function writePassword() {
-  //var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  var password = "";
+function generatePassword() {
 
   var lengthChoice = prompt("Please choose the length of password you want to generate. It should be between 8 - 128 characters:");
   if ( lengthChoice < 8 || lengthChoice > 128) {
     alert("Oooops! Not the length standard for password. Please try again.");
-    return password;
+    return;
   }
 
   var lowerCase = confirm("Do you want to include letters with lowercase?");
@@ -59,13 +34,20 @@ function writePassword() {
   if (specialChar === true) {
     typeChoice = typeChoice + characters;
   }
-
+  
+  var passwordOutput = "";
   for (var i = 0; i < lengthChoice; i++) {
-    password = password + typeChoice[Math.floor(Math.random()*typeChoice.length)];
+    passwordOutput = passwordOutput + typeChoice[Math.floor(Math.random()*typeChoice.length)];
   }
+  return passwordOutput;
+}
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
