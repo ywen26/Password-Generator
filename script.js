@@ -4,19 +4,21 @@ var letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var number = "1234567890";
 var characters = "!#$%&'()*+,-./:;<=>?@\[^_`{|}~";
 
+// Generate a new random password
 function generatePassword() {
-
+  // Set the password length range between 8 - 128 
   var lengthChoice = prompt("Please choose the length of password you want to generate. It should be between 8 - 128 characters:");
   if ( lengthChoice < 8 || lengthChoice > 128) {
+    var blank = "";
     alert("Oooops! Not the length standard for password. Please try again.");
-    return;
+    return blank;
   }
 
   var lowerCase = confirm("Do you want to include letters with lowercase?");
   var upperCase = confirm("Do you want to include letters with uppercase?");
   var numeric = confirm("Do you want to include the numbers?")
   var specialChar = confirm("Do you want to include the special characters?");
-
+  // Push the letters, numbers or special characters to selectable string range if are chosen
   var typeChoice = "";
 
   if (lowerCase === true) {
@@ -34,7 +36,7 @@ function generatePassword() {
   if (specialChar === true) {
     typeChoice = typeChoice + characters;
   }
-  
+  // Run a random password within the range of selected length and character
   var passwordOutput = "";
   for (var i = 0; i < lengthChoice; i++) {
     passwordOutput = passwordOutput + typeChoice[Math.floor(Math.random()*typeChoice.length)];
