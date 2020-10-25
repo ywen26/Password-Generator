@@ -34,5 +34,16 @@ Here are the steps of how to generate a password with users' preference:
 5. Select whether you prefer to include special characters in your password;
 6. A password will be generated base on your selection of length and symbols preference; There will be at least one symbol type you selected is generated in the password.
 
-## Appearence
+## Appearance
+
+Here is an example of password generated with length of 12 and all characters preference:
+
+![password sample](./assets/screenshot.png)
+
+## URL sources
+
+Feel free to check the web application: [https://ywen26.github.io/Password-Generator/](https://ywen26.github.io/Password-Generator/)
+
+And github repository: [https://github.com/ywen26/Password-Generator](https://github.com/ywen26/Password-Generator)
+
 
