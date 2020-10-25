@@ -23,3 +23,16 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
+
+# Mock-up Steps
+
+Here are the steps of how to generate a password with users' preference:
+1. When click on Generate Password button, a pop-up will ask your preferred password length; if you enter a number out of the standard length range, you wouldn't be able to generate any passwords;
+2. Select whether you prefer to include lowercase letters in your password;
+3. Select whether you prefer to include uppercase letters in your password;
+4. Select whether you prefer to include numbers in your password;
+5. Select whether you prefer to include special characters in your password;
+6. A password will be generated base on your selection of length and symbols preference; There will be at least one symbol type you selected is generated in the password.
+
+## Appearence
+
