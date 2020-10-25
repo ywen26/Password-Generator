@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var number = "1234567890";
+var number = "12345678909876543210123456789";
 var characters = "!#$%&'()*+,-./:;<=>?@\[^_`{|}~";
 
 // Generate a new random password
@@ -18,7 +18,7 @@ function generatePassword() {
   var upperCase = confirm("Do you want to include letters with uppercase?");
   var numeric = confirm("Do you want to include the numbers?")
   var specialChar = confirm("Do you want to include the special characters?");
-  // Push the letters, numbers or special characters to selectable string range if are chosen
+  // Push the letters, numbers or special characters to selectable type choice if are chosen
   var typeChoice = "";
 
   if (lowerCase === true) {
@@ -39,7 +39,7 @@ function generatePassword() {
   // Run a random password within the range of selected length and character
   var passwordOutput = "";
   for (var i = 0; i < lengthChoice; i++) {
-    passwordOutput = passwordOutput + typeChoice[Math.floor(Math.random()*typeChoice.length)];
+    passwordOutput = passwordOutput + typeChoice.charAt(Math.floor(Math.random()*typeChoice.length));
   }
   return passwordOutput;
 }
@@ -54,4 +54,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
