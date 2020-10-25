@@ -1,12 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+// Assign all necessary characters to variables
 var letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var number = "12345678909876543210123456789";
 var characters = "!#$%&'()*+,-./:;<=>?@\[^_`{|}~";
 
 // Generate a new random password
 function generatePassword() {
-  // Set the password length range between 8 - 128 
+  // Set the password length range between 8 - 128, and other length wouldn't be accepted
   var lengthChoice = prompt("Please choose the length of password you want to generate. It should be between 8 - 128 characters:");
   if ( lengthChoice < 8 || lengthChoice > 128) {
     var blank = "";
@@ -36,7 +37,7 @@ function generatePassword() {
   if (specialChar === true) {
     typeChoice = typeChoice + characters;
   }
-  // Run a random password within the range of selected length and character
+  // Run a random password within the range of selected length and characters
   var passwordOutput = "";
   for (var i = 0; i < lengthChoice; i++) {
     passwordOutput = passwordOutput + typeChoice.charAt(Math.floor(Math.random()*typeChoice.length));
